@@ -2,14 +2,13 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update
 # RUN apt upgrade -y
-RUN apt install -y apache2 php8.1
-RUN apt install -y php8.1-cli php8.1-mbstring php8.1-dom php8.1-zip php8.1-yaml php8.1-mysql php8.1-pdo php8.1-curl php8.1-gd php8.1-imagick php8.1-intl  php8.1-ldap php8.1-memcached php8.1-mongodb php8.1-opcache php8.1-redis php8.1-soap php8.1-xml
-RUN apt install -y php8.1-xsl php8.1-zmq php8.1-bcmath php8.1-calendar php8.1-exif php8.1-ftp php8.1-gettext php8.1-iconv php8.1-sockets php8.1-tokenizer php8.1-xmlrpc php8.1-phar php8.1-sqlite3 php8.1-pgsql php8.1-mysqli php8.1-mysqlnd php8.1-ctype php8.1-simplexml  php8.1-fileinfo 
-RUN apt install -y php8.1-posix  php8.1-xmlreader php8.1-xmlwriter php8.1-redis php8.1-apcu php8.1-imagick php8.1-ldap php8.1-intl  php8.1-msgpack php8.1-igbinary php8.1-memcached
-RUN apt install -y composer
+RUN apt install -y apache2 php
+RUN apt install -y php-cli php-mbstring php-dom php-zip php-yaml php-mysql php-pdo php-curl php-gd php-imagick php-intl  php-ldap php-memcached php-mongodb php-opcache php-redis php-soap php-xml
+RUN apt install -y php-xsl php-zmq php-bcmath php-calendar php-exif php-ftp php-iconv php-sockets php-tokenizer php-xmlrpc php-phar php-sqlite3 php-pgsql php-mysqli php-mysqlnd php-ctype php-simplexml  php-fileinfo 
+RUN apt install -y php-posix  php-xmlreader php-xmlwriter php-redis php-apcu php-imagick php-ldap php-intl  php-msgpack php-igbinary php-memcached
+RUN apt install -y composer libapache2-mod-php7.4
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN a2enmod rewrite && \
-    a2enmod php8.1
+RUN a2enmod rewrite
 RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 EXPOSE 80
 WORKDIR /var/www/html/
