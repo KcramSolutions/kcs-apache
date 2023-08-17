@@ -9,7 +9,7 @@ _Working Dir_: `/var/www/html`
 version: "3.0"
 services:
     server:
-        image: kcramsolutions/apache:php-7.4
+        image: kcramsolutions/apache:php-8.1
         ports:
             - 8080:80
         volumes:
