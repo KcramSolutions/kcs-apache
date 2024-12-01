@@ -4,15 +4,15 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Actualizar el sistema
 RUN apt update && apt upgrade -y
 
-# Agregar el repositorio de PHP 7.1
+# Agregar el repositorio de PHP 7.2
 RUN apt install -y software-properties-common
 RUN add-apt-repository ppa:ondrej/php -y && apt update
 
-# Instalar Apache y PHP 7.1
-RUN apt install -y apache2 php7.1 libapache2-mod-php7.1
+# Instalar Apache y PHP 7.2
+RUN apt install -y apache2 php7.2 libapache2-mod-php7.2
 
-# Instalar las extensiones de PHP 7.1
-RUN apt install -y php7.1-cli php7.1-mbstring php7.1-dom php7.1-zip php7.1-yaml php7.1-mysql php7.1-pdo php7.1-curl php7.1-gd php7.1-imagick php7.1-intl php7.1-ldap php7.1-memcached php7.1-mongodb php7.1-opcache php7.1-redis php7.1-soap php7.1-xml php7.1-xsl php7.1-zmq php7.1-bcmath php7.1-calendar php7.1-exif php7.1-ftp php7.1-iconv php7.1-sockets php7.1-tokenizer php7.1-xmlrpc php7.1-phar php7.1-sqlite3 php7.1-pgsql php7.1-mysqli php7.1-mysqlnd php7.1-ctype php7.1-simplexml php7.1-fileinfo
+# Instalar las extensiones de PHP 7.2
+RUN apt install -y php7.2-cli php7.2-mbstring php7.2-dom php7.2-zip php7.2-yaml php7.2-mysql php7.2-pdo php7.2-curl php7.2-gd php7.2-imagick php7.2-intl php7.2-ldap php7.2-memcached php7.2-mongodb php7.2-opcache php7.2-redis php7.2-soap php7.2-xml php7.2-xsl php7.2-zmq php7.2-bcmath php7.2-calendar php7.2-exif php7.2-ftp php7.2-iconv php7.2-sockets php7.2-tokenizer php7.2-xmlrpc php7.2-phar php7.2-sqlite3 php7.2-pgsql php7.2-mysqli php7.2-mysqlnd php7.2-ctype php7.2-simplexml php7.2-fileinfo
 
 # Instalar composer
 RUN apt install -y composer
