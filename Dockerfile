@@ -4,15 +4,15 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Actualizar el sistema
 RUN apt update && apt upgrade -y
 
-# Agregar el repositorio de PHP 8.2
+# Agregar el repositorio de PHP 8.3
 RUN apt install -y software-properties-common
 RUN add-apt-repository ppa:ondrej/php -y && apt update
 
-# Instalar Apache y PHP 8.2
-RUN apt install -y apache2 php8.2 libapache2-mod-php8.2
+# Instalar Apache y PHP 8.3
+RUN apt install -y apache2 php8.3 libapache2-mod-php8.3
 
-# Instalar las extensiones de PHP 8.2
-RUN apt install -y php8.2-cli php8.2-mbstring php8.2-dom php8.2-zip php8.2-yaml php8.2-mysql php8.2-pdo php8.2-curl php8.2-gd php8.2-imagick php8.2-intl php8.2-ldap php8.2-memcached php8.2-mongodb php8.2-opcache php8.2-redis php8.2-soap php8.2-xml php8.2-xsl php8.2-zmq php8.2-bcmath php8.2-calendar php8.2-exif php8.2-ftp php8.2-iconv php8.2-sockets php8.2-tokenizer php8.2-xmlrpc php8.2-phar php8.2-sqlite3 php8.2-pgsql php8.2-mysqli php8.2-mysqlnd php8.2-ctype php8.2-simplexml php8.2-fileinfo
+# Instalar las extensiones de PHP 8.3
+RUN apt install -y php8.3-cli php8.3-mbstring php8.3-dom php8.3-zip php8.3-yaml php8.3-mysql php8.3-pdo php8.3-curl php8.3-gd php8.3-imagick php8.3-intl php8.3-ldap php8.3-memcached php8.3-mongodb php8.3-opcache php8.3-redis php8.3-soap php8.3-xml php8.3-xsl php8.3-zmq php8.3-bcmath php8.3-calendar php8.3-exif php8.3-ftp php8.3-iconv php8.3-sockets php8.3-tokenizer php8.3-xmlrpc php8.3-phar php8.3-sqlite3 php8.3-pgsql php8.3-mysqli php8.3-mysqlnd php8.3-ctype php8.3-simplexml php8.3-fileinfo
 
 # Instalar composer
 RUN apt install -y composer
